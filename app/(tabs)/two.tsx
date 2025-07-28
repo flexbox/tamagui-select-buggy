@@ -1,4 +1,5 @@
 import { colorsList, itemsListOne, randomWordsList } from "components/data";
+import { Select } from "components/Select";
 import { SelectItems } from "components/SelectItems";
 import { Adapt, Label, Sheet, Text, View, XStack, YStack } from "tamagui";
 
@@ -14,6 +15,7 @@ export default function TabTwoScreen() {
         </YStack>
       </XStack>
       <SelectItems data={randomWordsList} label="Select a word" />
+      <Select items={randomWordsList} label="Select a word" />
     </View>
   );
 }

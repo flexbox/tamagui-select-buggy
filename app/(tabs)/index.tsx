@@ -2,6 +2,7 @@ import { H2, YStack } from "tamagui";
 import { SelectItems } from "components/SelectItems";
 import { modeList, speedList } from "components/data";
 import { ButtonTabs } from "components/ButtonTabs";
+import { Select } from "components/Select";
 
 function Front() {
   return (
@@ -19,6 +20,23 @@ function Back() {
   );
 }
 
+
+function LyoxxFront() {
+  return (
+    <YStack gap="$2" width="100%">
+      <Select items={speedList} label="Speed" />
+    </YStack>
+  );
+}
+
+function LyoxxBack() {
+  return (
+    <YStack gap="$2" width="100%">
+      <Select items={modeList} label="Mode" />
+    </YStack>
+  );
+}
+
 export default function TabOneScreen() {
   return (
     <YStack flex={1} bg="$background">
@@ -30,6 +48,13 @@ export default function TabOneScreen() {
           labelTwo={"Back"}
           childrenOne={<Front />}
           childrenTwo={<Back />}
+        />
+
+        <ButtonTabs
+          labelOne={"Front"}
+          labelTwo={"Back"}
+          childrenOne={<LyoxxFront />}
+          childrenTwo={<LyoxxBack />}
         />
       </YStack>
 
