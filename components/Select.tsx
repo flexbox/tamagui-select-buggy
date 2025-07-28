@@ -5,8 +5,8 @@ import { Check, ChevronDown } from '@tamagui/lucide-icons';
 // import { Adapt, Sheet, Select as UISelect } from 'tamagui';
 // import type { SelectProps as UISelectProps } from 'tamagui';
 
-import { Adapt, Label, Sheet, Select as UISelect, XStack, YStack } from 'tamagui'
-import type { SelectProps as UISelectProps } from 'tamagui'
+import { Adapt, getFontSize, Label, Sheet, Select as UISelect, XStack, YStack } from 'tamagui'
+import type { FontSizeTokens, SelectProps as UISelectProps } from 'tamagui'
 
 export type SelectProps = UISelectProps & {
   label?: string;
@@ -78,22 +78,22 @@ export const Select = ({
         </UISelect.ScrollUpButton>
 
         <UISelect.Viewport
-        // to do animations:
-        // animation='quick'
-        // animateOnly={['transform', 'opacity']}
-        // enterStyle={{ opacity: 0, y: -10 }}
-        // exitStyle={{ opacity: 0, y: 10 }}
+         // to do animations:
+          animation='quick'
+          animateOnly={['transform', 'opacity']}
+          enterStyle={{ opacity: 0, y: -10 }}
+          exitStyle={{ opacity: 0, y: 10 }}
         >
           <UISelect.Group>
             {label && <UISelect.Label>{label}</UISelect.Label>}
             {renderItems}
           </UISelect.Group>
           {/* Native gets an extra icon */}
-          {/* {native && (
+          {native && (
             <YStack position='absolute' justify='center' width={'$4'} pointerEvents='none'>
               <ChevronDown size={getFontSize((props.size as FontSizeTokens) ?? '$true')} />
             </YStack>
-          )} */}
+          )}
         </UISelect.Viewport>
 
         <UISelect.ScrollDownButton justify='center' position='relative' width='100%' height='$3'>
