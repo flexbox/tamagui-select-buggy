@@ -28,7 +28,7 @@ export function CurrentToast() {
   )
 }
 
-export function ToastControl() {
+export function ToastControl({ show, setShow }) {
   const toast = useToastController()
 
   return (
@@ -37,6 +37,7 @@ export function ToastControl() {
       <XStack gap="$2" justify="center">
         <Button
           onPress={() => {
+            setShow(true)
             toast.show('Successfully saved!', {
               message: "Don't worry, we've got your data.",
             })
@@ -47,6 +48,7 @@ export function ToastControl() {
         <Button
           onPress={() => {
             toast.hide()
+            setShow(false)
           }}
         >
           Hide

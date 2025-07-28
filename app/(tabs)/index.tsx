@@ -1,55 +1,38 @@
-import { ExternalLink } from '@tamagui/lucide-icons'
-import { Anchor, H2, Paragraph, XStack, YStack } from 'tamagui'
-import { ToastControl } from 'components/CurrentToast'
+import { H2, YStack } from "tamagui";
+import { SelectItems } from "components/SelectItems";
+import { modeList, speedList } from "components/data";
+import { ButtonTabs } from "components/ButtonTabs";
+
+function Front() {
+  return (
+    <YStack gap="$2" width="100%">
+      <SelectItems data={speedList} label="Speed" />
+    </YStack>
+  );
+}
+
+function Back() {
+  return (
+    <YStack gap="$2" width="100%">
+      <SelectItems data={modeList} label="Mode" />
+    </YStack>
+  );
+}
 
 export default function TabOneScreen() {
   return (
-    <YStack flex={1} items="center" gap="$8" px="$10" pt="$5" bg="$background">
-      <H2>Tamagui + Expo</H2>
+    <YStack flex={1} bg="$background">
+      <YStack items="center" gap="$8" px="$10" pt="$5">
+        <H2>Tamagui + Select Bug</H2>
+        
+        <ButtonTabs
+          labelOne={"Front"}
+          labelTwo={"Back"}
+          childrenOne={<Front />}
+          childrenTwo={<Back />}
+        />
+      </YStack>
 
-      <ToastControl />
-
-      <XStack
-        items="center"
-        justify="center"
-        flexWrap="wrap"
-        gap="$1.5"
-        position="absolute"
-        b="$8"
-      >
-        <Paragraph fontSize="$5">Add</Paragraph>
-
-        <Paragraph fontSize="$5" px="$2" py="$1" color="$blue10" bg="$blue5">
-          tamagui.config.ts
-        </Paragraph>
-
-        <Paragraph fontSize="$5">to root and follow the</Paragraph>
-
-        <XStack
-          items="center"
-          gap="$1.5"
-          px="$2"
-          py="$1"
-          rounded="$3"
-          bg="$green5"
-          hoverStyle={{ bg: '$green6' }}
-          pressStyle={{ bg: '$green4' }}
-        >
-          <Anchor
-            href="https://tamagui.dev/docs/core/configuration"
-            textDecorationLine="none"
-            color="$green10"
-            fontSize="$5"
-          >
-            Configuration guide
-          </Anchor>
-          <ExternalLink size="$1" color="$green10" />
-        </XStack>
-
-        <Paragraph fontSize="$5" text="center">
-          to configure your themes and tokens.
-        </Paragraph>
-      </XStack>
     </YStack>
-  )
+  );
 }

@@ -1,7 +1,11 @@
 import { defaultConfig } from '@tamagui/config/v4'
 import { createTamagui } from 'tamagui'
+import { themes } from './theme/theme'
 
-export const config = createTamagui(defaultConfig)
+export const config = createTamagui({
+  themes,
+  ...defaultConfig,
+})
 
 export default config
 
