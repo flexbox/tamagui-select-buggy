@@ -1,11 +1,14 @@
 import { colorsList, itemsListOne, randomWordsList } from "components/data";
 import { Select } from "components/Select";
 import { SelectItems } from "components/SelectItems";
+import { SelectPurple } from "components/SelectPurple";
+import { useState } from "react";
 import {
   Adapt,
   H4,
   Label,
   Paragraph,
+  ScrollView,
   Sheet,
   Text,
   View,
@@ -14,8 +17,10 @@ import {
 } from "tamagui";
 
 export default function TabTwoScreen() {
+  const [selectedCategory, setSelectedCategory] = useState("all");
+
   return (
-    <YStack flex={1} bg="$background" gap="$2" px="$4">
+    <ScrollView flex={1} bg="$background" gap="$2" px="$4">
       <H4>Select</H4>
       <YStack mb="$8">
         <XStack jc="space-between" mb="$4">
@@ -47,6 +52,14 @@ export default function TabTwoScreen() {
         <Select items={randomWordsList} label="Select a word" />
         <Paragraph>✅ works</Paragraph>
       </YStack>
-    </YStack>
+
+      <H4>Select from therealpurplemana on GitHub</H4>
+      <SelectPurple
+        selectedCategory={selectedCategory}
+        onCategoryChange={setSelectedCategory}
+      />
+      <Paragraph>✅ works</Paragraph>
+      <XStack height="$10" />
+    </ScrollView>
   );
 }

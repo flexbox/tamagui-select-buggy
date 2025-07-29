@@ -23,13 +23,15 @@ export default function ModalScreen() {
   return (
     <View flex={1} bg="$background" px="$4">
       <SelectItems data={randomWordsList} label="Select a random word" />
-      
+      <Paragraph>✅ works but as the screen is a `modal` it is displayed behind the screen</Paragraph>
+
       <ButtonTabs
         labelOne={"Front"}
         labelTwo={"Back"}
         childrenOne={<One />}
         childrenTwo={<Two />}
       />
+       <Paragraph>❌ Does not works when switching tabs</Paragraph>
     </View>
   );
 }
