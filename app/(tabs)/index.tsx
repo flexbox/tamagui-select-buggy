@@ -7,7 +7,12 @@ import { Select } from "components/Select";
 function Front() {
   return (
     <YStack gap="$2" width="100%">
-      <SelectItems data={speedList} label="Speed" key="select-items-front" id="select-items-front" />
+      <SelectItems
+        data={speedList}
+        label="Speed"
+        key="select-items-front"
+        id="select-items-front"
+      />
     </YStack>
   );
 }
@@ -59,7 +64,6 @@ export default function TabOneScreen() {
           childrenTwo={<LyoxxBack />}
         /> */}
       </YStack>
-
     </YStack>
   );
 }
