@@ -1,3 +1,4 @@
+// debug-verbose
 import React, { useMemo, useState } from 'react';
 
 import { LinearGradient } from '@tamagui/linear-gradient';

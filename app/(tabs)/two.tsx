@@ -1,21 +1,37 @@
 import { colorsList, itemsListOne, randomWordsList } from "components/data";
 import { Select } from "components/Select";
 import { SelectItems } from "components/SelectItems";
-import { Adapt, Label, Sheet, Text, View, XStack, YStack } from "tamagui";
+import { Adapt, H4, Label, Paragraph, Sheet, Text, View, XStack, YStack } from "tamagui";
 
 export default function TabTwoScreen() {
   return (
-    <View flex={1} bg="$background" gap="$2" px="$4">
-      <XStack jc="space-between" mb="$4">
-        <YStack f={1} width={"50%"} gap="$2" pr="$2">
-        <SelectItems data={itemsListOne} label="Select an item" />
-        </YStack>
-        <YStack f={1} width={"50%"} gap="$2" pl="$2">
-        <SelectItems data={colorsList} label="Select a color" />
-        </YStack>
-      </XStack>
-      <SelectItems data={randomWordsList} label="Select a word" />
-      <Select items={randomWordsList} label="Select a word" />
-    </View>
+    <YStack flex={1} bg="$background" gap="$2" px="$4">
+      <H4>Select</H4>
+      <YStack mb="$8">
+        <XStack jc="space-between" mb="$4">
+          <YStack flex={1} width={"50%"} gap="$2" pr="$2">
+          <SelectItems data={itemsListOne} label="Select an item" />
+          </YStack>
+          <YStack flex={1} width={"50%"} gap="$2" pl="$2">
+          <SelectItems data={colorsList} label="Select a color" />
+          </YStack>
+        </XStack>
+        <SelectItems data={randomWordsList} label="Select a word" />
+      </YStack>
+            
+      <H4>Select from Lyoxx on Discord</H4>
+      <YStack mb="$8">
+        <XStack jc="space-between" mb="$4">
+          <YStack flex={1} width={"50%"} gap="$2" pr="$2">
+          <Select items={itemsListOne} label="Select an item" />
+          </YStack>
+          <YStack flex={1} width={"50%"} gap="$2" pl="$2">
+          <Select items={colorsList} label="Select a color" />
+          </YStack>
+        </XStack>
+        <Select items={randomWordsList} label="Select a word" />
+      </YStack>
+
+    </YStack>
   );
 }

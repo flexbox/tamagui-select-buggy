@@ -27,7 +27,7 @@ export function ButtonTabs({
         gap="$3"
       >
         <Button
-          f={1}
+          flex={1}
           onPress={() => {
             setActiveTab("front");
           }}
@@ -36,7 +36,7 @@ export function ButtonTabs({
           {labelOne}
         </Button>
         <Button
-          f={1}
+          flex={1}
           onPress={() => {
             setActiveTab("back");
           }}

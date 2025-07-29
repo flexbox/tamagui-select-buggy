@@ -1,30 +1,31 @@
+// debug-verbose
 import { ChevronDown } from "@tamagui/lucide-icons";
-import { Adapt, Label, Sheet, Text, View, XStack, YStack, Select as TamaguiSelect, useTheme } from "tamagui";
+import { Adapt, Label, Sheet, Select as TamaguiSelect, useTheme } from "tamagui";
 
-
-export function SelectItems({data, label}) {
-  const theme = useTheme();
-
-  return (    
-    <TamaguiSelect defaultValue="">
+export function SelectItems({data, label, ...rest}) {
+  console.log("🚀 ~ SelectItems ~ rest:", rest);
+  
+  return (
+    <TamaguiSelect defaultValue="" {...rest}>
       <Label>{label}</Label>
       <TamaguiSelect.Trigger
         pl="$2.5"
         iconAfter={
           <ChevronDown
-            color="$accent1"
+            color="$accent12"
           />
         }
       >
         <TamaguiSelect.Value placeholder="Search..." />
       </TamaguiSelect.Trigger>
 
-      <Adapt platform="touch">
+      <Adapt platform="touch" when="maxSm">
         {/* or <Sheet> */}
         <TamaguiSelect.Sheet
+          native
           modal
           dismissOnSnapToBottom
-          dismissOnOverlayPress
+          dismissOnOverlayPress          
           animation="quick"
           snapPoints={[50, 25]}
         >
@@ -53,6 +54,5 @@ export function SelectItems({data, label}) {
         <TamaguiSelect.ScrollDownButton>Down</TamaguiSelect.ScrollDownButton>
       </TamaguiSelect.Content>
     </TamaguiSelect>
-
   );
 }

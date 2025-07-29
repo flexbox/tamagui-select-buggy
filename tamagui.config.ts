@@ -3,8 +3,8 @@ import { createTamagui } from 'tamagui'
 import { themes } from './theme/theme'
 
 export const config = createTamagui({
-  themes,
   ...defaultConfig,
+  themes,
 })
 
 export default config
