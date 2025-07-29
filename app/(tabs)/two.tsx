@@ -1,5 +1,6 @@
 import { colorsList, itemsListOne, randomWordsList } from "components/data";
 import { Select } from "components/Select";
+import { SelectDemoItem } from "components/SelectDemoItem";
 import { SelectItems } from "components/SelectItems";
 import { SelectPurple } from "components/SelectPurple";
 import { useState } from "react";
@@ -54,11 +55,20 @@ export default function TabTwoScreen() {
       </YStack>
 
       <H4>Select from therealpurplemana on GitHub</H4>
-      <SelectPurple
-        selectedCategory={selectedCategory}
-        onCategoryChange={setSelectedCategory}
-      />
-      <Paragraph>✅ works</Paragraph>
+      <YStack mb="$8">
+        <SelectPurple
+          selectedCategory={selectedCategory}
+          onCategoryChange={setSelectedCategory}
+          />
+        <Paragraph>✅ works</Paragraph>
+      </YStack>
+      
+      <H4>Select from s77rt on GitHub</H4>
+      <YStack mb="$8">
+        <SelectDemoItem />
+        <Paragraph>✅ works</Paragraph>
+      </YStack>
+
       <XStack height="$10" />
     </ScrollView>
   );

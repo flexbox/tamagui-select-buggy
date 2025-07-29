@@ -22,6 +22,10 @@ export const unstable_settings = {
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync()
 
+// https://github.com/tamagui/tamagui/issues/3071
+// do not change anything here
+// process.env.TAMAGUI_USE_NATIVE_PORTAL = 'false';
+
 export default function RootLayout() {
   const [interLoaded, interError] = useFonts({
     Inter: require('@tamagui/font-inter/otf/Inter-Medium.otf'),

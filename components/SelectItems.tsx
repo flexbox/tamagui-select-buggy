@@ -4,7 +4,8 @@ import { Adapt, Label, Sheet, Select as TamaguiSelect, useTheme } from "tamagui"
 
 export function SelectItems({data, label, ...rest}) {
   console.log("🚀 ~ SelectItems ~ rest:", rest);
-  
+  console.log("🚀 ~ SelectItems ~ process.env:", process.env);
+
   return (
     <TamaguiSelect defaultValue="" {...rest}>
       <Label>{label}</Label>
