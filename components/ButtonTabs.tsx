@@ -19,7 +19,6 @@ export function ButtonTabs({
   childrenTwo
 }: ButtonTabsProps) {
   const [activeTab, setActiveTab] = useState<"front" | "back">("front");
-  const { color3 } = useTheme();
 
   const buttons = useMemo(
     () => (
@@ -46,7 +45,7 @@ export function ButtonTabs({
         </Button>
       </XStack>
     ),
-    [activeTab, labelOne, labelTwo, color3.val]
+    [activeTab, labelOne, labelTwo]
   );
 
   const activeContent = useMemo(() => {

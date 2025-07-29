@@ -1,4 +1,4 @@
-import { H2, H4, YStack } from "tamagui";
+import { H2, H4, Paragraph, YStack } from "tamagui";
 import { SelectItems } from "components/SelectItems";
 import { modeList, speedList } from "components/data";
 import { ButtonTabs } from "components/ButtonTabs";
@@ -39,16 +39,17 @@ function LyoxxBack() {
 export default function TabOneScreen() {
   return (
     <YStack flex={1} bg="$background">
-      <YStack gap="$8" px="$4" pt="$5">
+      <YStack gap="$2" px="$4" pt="$5">
         <H2>Tamagui + Select Bug</H2>
 
-        <H4>Select</H4>      
+        <H4>Select</H4>
         <ButtonTabs
           labelOne={"Front"}
           labelTwo={"Back"}
           childrenOne={<Front />}
           childrenTwo={<Back />}
         />
+        <Paragraph>❌ Does not works when switching tabs</Paragraph>
 
         {/* <H4>Select from Lyoxx on Discord</H4>
         <ButtonTabs

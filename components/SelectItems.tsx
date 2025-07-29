@@ -12,11 +12,11 @@ export function SelectItems({data, label, ...rest}) {
         pl="$2.5"
         iconAfter={
           <ChevronDown
-            color="$accent12"
+            color="$accent4"
           />
         }
       >
-        <TamaguiSelect.Value placeholder="Search..." />
+        <TamaguiSelect.Value placeholder="Search…" />
       </TamaguiSelect.Trigger>
 
       <Adapt platform="touch" when="maxSm">

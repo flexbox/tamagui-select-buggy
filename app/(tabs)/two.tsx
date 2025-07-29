@@ -1,7 +1,17 @@
 import { colorsList, itemsListOne, randomWordsList } from "components/data";
 import { Select } from "components/Select";
 import { SelectItems } from "components/SelectItems";
-import { Adapt, H4, Label, Paragraph, Sheet, Text, View, XStack, YStack } from "tamagui";
+import {
+  Adapt,
+  H4,
+  Label,
+  Paragraph,
+  Sheet,
+  Text,
+  View,
+  XStack,
+  YStack,
+} from "tamagui";
 
 export default function TabTwoScreen() {
   return (
@@ -10,28 +20,33 @@ export default function TabTwoScreen() {
       <YStack mb="$8">
         <XStack jc="space-between" mb="$4">
           <YStack flex={1} width={"50%"} gap="$2" pr="$2">
-          <SelectItems data={itemsListOne} label="Select an item" />
+            <SelectItems data={itemsListOne} label="Select an item" />
+            <Paragraph>✅ works</Paragraph>
           </YStack>
           <YStack flex={1} width={"50%"} gap="$2" pl="$2">
-          <SelectItems data={colorsList} label="Select a color" />
+            <SelectItems data={colorsList} label="Select a color" />
+            <Paragraph>✅ works</Paragraph>
           </YStack>
         </XStack>
         <SelectItems data={randomWordsList} label="Select a word" />
+        <Paragraph>✅ works</Paragraph>
       </YStack>
-            
+
       <H4>Select from Lyoxx on Discord</H4>
       <YStack mb="$8">
         <XStack jc="space-between" mb="$4">
           <YStack flex={1} width={"50%"} gap="$2" pr="$2">
-          <Select items={itemsListOne} label="Select an item" />
+            <Select items={itemsListOne} label="Select an item" />
+            <Paragraph>✅ works</Paragraph>
           </YStack>
           <YStack flex={1} width={"50%"} gap="$2" pl="$2">
-          <Select items={colorsList} label="Select a color" />
+            <Select items={colorsList} label="Select a color" />
+            <Paragraph>✅ works</Paragraph>
           </YStack>
         </XStack>
         <Select items={randomWordsList} label="Select a word" />
+        <Paragraph>✅ works</Paragraph>
       </YStack>
-
     </YStack>
   );
 }
