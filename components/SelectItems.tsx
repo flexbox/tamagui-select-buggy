@@ -36,7 +36,9 @@ export function SelectItems({data, label, ...rest}) {
               <Adapt.Contents />
             </Sheet.ScrollView>
           </Sheet.Frame>
-          <Sheet.Overlay />
+          <Sheet.Overlay
+            bg="rgba(155, 0, 0, 0.8)" // this shouldn't be necessary ?
+          />
         </TamaguiSelect.Sheet>
       </Adapt>
 
