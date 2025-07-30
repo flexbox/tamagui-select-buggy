@@ -21,13 +21,14 @@ export function SelectItems({data, label, ...rest}) {
       </TamaguiSelect.Trigger>
 
       <Adapt platform="touch" when="maxSm">
-        {/* or <Sheet> */}
         <TamaguiSelect.Sheet
-          native
+          native // iOS only
+          preferAdaptParentOpenState
           modal
           dismissOnSnapToBottom
           dismissOnOverlayPress          
-          animation="quick"
+          // animation="quick"
+          animation='100ms' // from https://github.com/tamagui/tamagui/issues/3436#issuecomment-3133812014
           snapPoints={[50, 25]}
         >
           <Sheet.Frame>
